@@ -24,6 +24,7 @@ public class LiveStreamGen extends JFrame implements ActionListener {
 	private JButton buttonGenerate;
 	private JTextArea box;
 	private StreamGenerator gen = new StreamGenerator();
+	static JFrame parent;
 
 	/**
 	 * 
@@ -35,6 +36,7 @@ public class LiveStreamGen extends JFrame implements ActionListener {
 	}
 
 	public void init() {
+		parent= this;
 		panel = new JPanel();
 		selector = new JComboBox<String>(genStrings);
 		selector.addActionListener(this);

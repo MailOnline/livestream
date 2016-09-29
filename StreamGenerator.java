@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 public class StreamGenerator {
 	
 	private String defaultPoster = "http://i.dailymail.co.uk/i/pix/2015/11/04/hunger-games-live-stream-image-overlay-3.jpg";
@@ -28,6 +30,16 @@ public class StreamGenerator {
 				if (line.contains("$channel")) {
 					line = line.replace("$channel", channel);
 				}
+				if(line.contains("muted")){
+					if(JOptionPane.showConfirmDialog(LiveStreamGen.parent, "Muted?")==1){
+						line = line.replace("muted", "");
+					}
+				}
+				if(line.contains("autoplay")){
+					if(JOptionPane.showConfirmDialog(LiveStreamGen.parent, "AutoPlay?")==1){
+						line = line.replace("autoplay", "");
+					}
+				}
 				lines.add(line);
 			}
 			single.close();
@@ -36,6 +48,9 @@ public class StreamGenerator {
 		}
 		return lines;
 	}
+	
+	
+	
 	
 
 
@@ -56,6 +71,16 @@ public class StreamGenerator {
 				}
 				if (line.contains("$channel")) {
 					line = line.replace("$channel", channel);
+				}
+				if(line.contains("muted")){
+					if(JOptionPane.showConfirmDialog(LiveStreamGen.parent, "Muted?")==1){
+						line = line.replace("muted", "");
+					}
+				}
+				if(line.contains("autoplay")){
+					if(JOptionPane.showConfirmDialog(LiveStreamGen.parent, "AutoPlay?")==1){
+						line = line.replace("autoplay", "");
+					}
 				}
 				lines.add(line);
 			}
@@ -86,6 +111,16 @@ public class StreamGenerator {
 				}
 				if (line.contains("$channel")) {
 					line = line.replace("$channel", channel);
+				}
+				if(line.contains("muted")){
+					if(JOptionPane.showConfirmDialog(LiveStreamGen.parent, "Muted?")==1){
+						line = line.replace("muted", "");
+					}
+				}
+				if(line.contains("autoplay")){
+					if(JOptionPane.showConfirmDialog(LiveStreamGen.parent, "AutoPlay?")==1){
+						line = line.replace("autoplay", "");
+					}
 				}
 				lines.add(line);
 			}
